@@ -19,7 +19,7 @@ export class Tab1Page implements OnInit {
     this.dataService.getListActivity(false).subscribe((response) => {
       console.log(response);
       this.dataService
-        .getParticipants("5fa5801fa6d7240d1816f08c")
+        .getParticipants("5fa6aafdf866ac3e91d12a2c")
         .subscribe((response) => {
           console.log(response);
           response.map((x) => {

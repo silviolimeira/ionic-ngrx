@@ -1,3 +1,6 @@
 <ion-item>
   <ion-label>{{participants?.length}}</ion-label>
 </ion-item>
+<ion-item *ngIf="participants?.length">
+  <ion-label>List of Participants</ion-label>
+</ion-item>
