@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable, Subscriber } from "rxjs";
 import { DataService } from "../services/data.service";
+import { map, tap } from "rxjs/operators";
 
 @Component({
   selector: "app-tab1",
@@ -7,13 +9,25 @@ import { DataService } from "../services/data.service";
   styleUrls: ["tab1.page.scss"],
 })
 export class Tab1Page implements OnInit {
-  //Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpYUBnbWFpbC5jb20iLCJleHAiOjQxOTU3MTg1MjJ9.V1h2KNPXUvVKyFP-4TlBMzJo8qdUfvtD1Cp2ocGl_LAo93KdPyxUp9ieM7-6vMLZ_N1ajG4hCL07F9TpRtpCww
+  participants: Array<any> = [];
+
   constructor(public dataService: DataService) {}
 
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
+
     this.dataService.getListActivity(false).subscribe((response) => {
       console.log(response);
+      this.dataService
+        .getParticipants("5fa5801fa6d7240d1816f08c")
+        .subscribe((response) => {
+          console.log(response);
+          response.map((x) => {
+            console.log(x.name);
+            this.participants.push(x.name);
+          });
+          console.log(this.participants.length);
+        });
     });
   }
 }

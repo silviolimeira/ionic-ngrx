@@ -14,4 +14,11 @@ export class DataService {
       `${API_CONFIG.baseURL}/activities/pageClosed?closed=${closed}`
     );
   }
+
+  getParticipants(activityId: String) {
+    console.log(`${API_CONFIG.baseURL}/activities/${activityId}/participants`);
+    return this.http.get<any[]>(
+      `${API_CONFIG.baseURL}/activities/${activityId}/participants`
+    );
+  }
 }
