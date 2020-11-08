@@ -1,0 +1,10 @@
+<ion-item>
+    <ion-label>{{participants?.length}}</ion-label>
+</ion-item>
+<ion-item *ngIf="participants?.length">
+    <ion-list *ngFor="let participant of participants">
+        <ion-item>
+            {{participant.id}} {{participant.name}} {{participant.email}}
+        </ion-item>
+    </ion-list>
+</ion-item>

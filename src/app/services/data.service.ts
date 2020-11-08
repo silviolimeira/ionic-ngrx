@@ -21,4 +21,8 @@ export class DataService {
       `${API_CONFIG.baseURL}/activities/${activityId}/participants`
     );
   }
+
+  getActivity(id: String) {
+    return this.http.get<any[]>(`${API_CONFIG.baseURL}/activities/${id}`);
+  }
 }

@@ -12,6 +12,8 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <ion-item>
+    <app-participant-card-list [participants]="participants$ | async"></app-participant-card-list>
+  </ion-item>
   <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>

@@ -46,6 +46,7 @@ export class Tab2Page implements OnInit {
     console.log("extract data: ", res);
 
     //return of(res.content[3].participants);
-    return res.content[3].participants;
+    //return res.content[3].participants;
+    return res;
   }
 }
