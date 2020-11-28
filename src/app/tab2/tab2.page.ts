@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../services/data.service";
 import { map, tap } from "rxjs/operators";
 import { Observable, of } from "rxjs";
-import { resolve } from "path";
 
 @Component({
   selector: "app-tab2",
